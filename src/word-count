@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# Count words in a directory.
+#
+
+# count words
+wc -w *.tex
+
+# get full text
+cat *.tex | xclip -selection c
