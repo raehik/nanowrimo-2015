@@ -3,8 +3,10 @@
 # Count words in a directory.
 #
 
+count_dir="src"
+
 # count words
-wc -w *.tex
+wc -w "$count_dir"/*.tex
 
 # get full text
-cat *.tex | xclip -selection c
+cat "$count_dir"/*.tex | xclip -selection c
