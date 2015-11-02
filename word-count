@@ -10,3 +10,4 @@ wc -w "$count_dir"/*.tex
 
 # get full text
 cat "$count_dir"/*.tex | xclip -selection c
+echo "Copied full text (including extra scenes)"
