@@ -7,9 +7,14 @@
 
 \begin{document}
 
+% get 'live' info about book
+\immediate\write18{./get-details}
+\input{details}
+
 %% Document & author info {{{
 \title{Tales of Two Wanderers}
 \author{Ben Orchard}
+\date{\today \\ \textbf{Current word count: \wc}}
 
 % \today's format follows: '{month} {day}, {year}'
 %\date{\today}
@@ -24,7 +29,7 @@
 % Mainmatter start
 \mainmatter
 
-\inputsrc{chapter-1}
-\inputsrc{scene-so-called-heroes}
+\immediate\write18{./input-all-sources}
+\input{all-src}
 
 \end{document}
