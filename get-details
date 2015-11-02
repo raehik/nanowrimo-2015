@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#
+# Short description of the program/script's operation/function.
+#
+
+outfile="details.tex"
+
+wc=0
+
+def_cmd() {
+    echo "\\newcommand{\\$1}{$2}" >> "$outfile"
+}
+
+# clear outfile
+echo -n '' > "$outfile"
+
+for file in src/*.tex; do
+    wc=$(($wc + $(wc -w < "$file")))
+done
+
+def_cmd wc $wc

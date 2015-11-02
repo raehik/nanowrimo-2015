@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#
+# Short description of the program/script's operation/function.
+#
+
+src_dir="src"
+tex_ext="tex"
+outfile="all-src.tex"
+
+input_start="\input{"
+input_end="}"
+
+wc=0
+
+# clear outfile
+echo -n '' > "$outfile"
+
+for file in "$src_dir"/*."$tex_ext"; do
+    echo "${input_start}${file}${input_end}" >> "$outfile"
+done
